@@ -14,6 +14,8 @@ import withRoot from '../withRoot';
 import { Route } from 'react-router-dom'
 import AppDrawer from './../modules/components/AppDrawer';
 
+import Demo from './../grid-list/Gh1CardGL';
+
 const styles = theme => ({
   root: {
     textAlign: 'center',
@@ -96,6 +98,9 @@ const ShowChapterSection = ({ match }) => (
   <div>
     <h3>Chapter: {match.params.ch}</h3>
     <h4>Section: {match.params.sec}</h4>
+    <div>
+      <Demo />
+    </div>
   </div>
 )
 
@@ -116,32 +121,6 @@ class Index extends React.Component {
       activePage: findActivePage(pages, myurl),
     };
   }
-
-/*
-  This was the original getChildContext which is defined in
-  /docs/src/modules/components/withRoot
-
-  this.props.url was coming from next.js
-  see this explanation in the README
-
-  https://github.com/zeit/next.js/#fetching-data-and-component-lifecycle
-
-  getInitialProps receives a context object with the following properties:
-  pathname - path section of URL
-
-  Since we are using create-react-app instead of next.js
-  there is no server side rendering (SSR)
-  So we need to get the url.pathname from our router of choice which is
-  react-router
-
-  getChildContext() {
-    return {
-      url: this.props.url ? this.props.url : null,
-      pages,
-      activePage: findActivePage(pages, this.props.url),
-    };
-  }
-*/
 
   handleDrawerToggle = () => {
     this.setState({ mobileOpen: !this.state.mobileOpen });
