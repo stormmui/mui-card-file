@@ -5,11 +5,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "material-ui/styles";
 import GridList, { GridListTile } from "material-ui/GridList";
-// Both ways work
-//import tileData from "./../data/repos/html5-node-diagram.json";
-//import tileData from "./../data/repos/ivy.json";
-//import tileData from "./../data/repos/nodejs-sandboxed-fs.json";
-import tileData from "./../data/repos/tileData";
 import Gh1Card from "./../cards/Gh1Card";
 
 const styles = theme => ({
@@ -30,7 +25,7 @@ const styles = theme => ({
 });
 
 function Gh1CardGL(props) {
-  const { classes } = props;
+  const { classes, tileData } = props;
 
   return (
     <div className={classes.root}>
@@ -46,7 +41,8 @@ function Gh1CardGL(props) {
 }
 
 Gh1CardGL.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
+  tileData: PropTypes.object.isRequired
 };
 
 export default withStyles(styles)(Gh1CardGL);

@@ -14,7 +14,7 @@ import withRoot from '../withRoot';
 import { Route } from 'react-router-dom'
 import AppDrawer from './../modules/components/AppDrawer';
 
-import Demo from './../grid-list/Gh1CardGL';
+import Demo from './../grid-list/Gh1CardGLWrapper';
 
 const styles = theme => ({
   root: {
