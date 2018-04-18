@@ -25,44 +25,44 @@ const styles = theme => ({
 
 const pages = [
   {
-    pathname: '/ch1',
+    pathname: '/repo1',
     children: [
       {
-        pathname: '/ch1/sec1',
+        pathname: '/repo1/view1',
       },
       {
-        pathname: '/ch1/sec2',
+        pathname: '/repo1/view2',
       },
       {
-        pathname: '/ch1/sec3',
+        pathname: '/repo1/view3',
       },
     ],
   },
   {
-    pathname: '/ch2',
+    pathname: '/repo2',
     children: [
       {
-        pathname: '/ch2/sec1',
+        pathname: '/repo2/view1',
       },
       {
-        pathname: '/ch2/sec2',
+        pathname: '/repo2/view2',
       },
       {
-        pathname: '/ch2/sec3',
+        pathname: '/repo2/view3',
       },
     ],
   },
   {
-    pathname: '/ch3',
+    pathname: '/repo3',
     children: [
       {
-        pathname: '/ch3/sec1',
+        pathname: '/repo3/view1',
       },
       {
-        pathname: '/ch3/sec2',
+        pathname: '/repo3/view2',
       },
       {
-        pathname: '/ch3/sec3',
+        pathname: '/repo3/view3',
       },
     ],
   },
