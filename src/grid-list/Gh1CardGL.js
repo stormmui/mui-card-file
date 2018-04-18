@@ -6,8 +6,10 @@ import PropTypes from "prop-types";
 import { withStyles } from "material-ui/styles";
 import GridList, { GridListTile } from "material-ui/GridList";
 // Both ways work
-import tileData from "./tileData1.json";
-//import tileData from "./tileData";
+//import tileData from "./../data/repos/html5-node-diagram.json";
+//import tileData from "./../data/repos/ivy.json";
+//import tileData from "./../data/repos/nodejs-sandboxed-fs.json";
+import tileData from "./../data/repos/tileData";
 import Gh1Card from "./../cards/Gh1Card";
 
 const styles = theme => ({
