@@ -16,7 +16,8 @@ class Gh1CardGLWrapper extends React.Component {
   componentDidMount() {
     //const url = 'https://raw.githubusercontent.com/stormasm/mui-card-file/master/src/data/repos/ivy.json';
     //const url = 'https://raw.githubusercontent.com/stormasm/mui-card-file/master/src/data/repos/html5-node-diagram.json';
-    const url = 'https://raw.githubusercontent.com/stormasm/mui-card-file/master/src/data/repos/nodejs-sandboxed-fs.json';
+    const url =
+      "https://raw.githubusercontent.com/stormasm/mui-card-file/master/src/data/repos/nodejs-sandboxed-fs.json";
     // const url = "https://hn.algolia.com/api/v1/search?query=redux";
 
     this.setState({ isLoading: true });
@@ -49,9 +50,12 @@ class Gh1CardGLWrapper extends React.Component {
       <div>
         <Gh1CardGL tileData={this.state.data} />
       </div>
-*/
+      */
       <div>
-        {hits.length}
+        <div>{hits.length}</div>
+        <div>{new String(Array.isArray(hits))}</div>
+        <div>{new String(JSON.stringify(hits[0]))}</div>
+        <div>{new String(JSON.stringify(hits[9]))}</div>
       </div>
     );
   }
