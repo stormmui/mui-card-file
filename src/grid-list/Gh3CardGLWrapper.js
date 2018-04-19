@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Gh1CardGL from "./Gh1CardGL";
 
-class Gh1CardGLWrapper extends React.Component {
+class Gh3CardGLWrapper extends React.Component {
   constructor(props) {
     super(props);
 
@@ -17,10 +17,9 @@ class Gh1CardGLWrapper extends React.Component {
     const template =
       "https://raw.githubusercontent.com/stormasm/mui-card-file/master/src/data/repos/";
 
-    const url = template + "ivy.json";
+    //const url = template + "ivy.json";
     //const url = template + 'html5-node-diagram.json';
-    //const url = template + 'nodejs-sandboxed-fs.json';
-    // const url = "https://hn.algolia.com/api/v1/search?query=redux";
+    const url = template + 'nodejs-sandboxed-fs.json';
 
     this.setState({ isLoading: true });
 
@@ -55,8 +54,8 @@ class Gh1CardGLWrapper extends React.Component {
   }
 }
 
-Gh1CardGLWrapper.propTypes = {
+Gh3CardGLWrapper.propTypes = {
   tileData: PropTypes.object.isRequired
 };
 
-export default Gh1CardGLWrapper;
+export default Gh3CardGLWrapper;
