@@ -1,27 +1,21 @@
 import React from "react";
 import PropTypes from "prop-types";
-// Both ways work
-//import tileData from "./../data/repos/html5-node-diagram.json";
-//import tileData from "./../data/repos/ivy.json";
-//import tileData from "./../data/repos/nodejs-sandboxed-fs.json";
-//import tileData from "./../data/repos/tileData";
-import Gh1CardGL from "./Gh1CardGL";
+//import Gh1CardGL from "./Gh1CardGL";
 
 class Gh1CardGLWrapper extends React.Component {
-
   constructor(props) {
     super(props);
 
     this.state = {
       data: {},
       isLoading: false,
-      error: null,
+      error: null
     };
   }
 
   componentDidMount() {
-
-    const url = "https://raw.githubusercontent.com/stormasm/mui-card-file/master/src/data/repos/ivy.json"
+    // const url = 'https://raw.githubusercontent.com/stormasm/mui-card-file/master/src/data/repos/ivy.json';
+    const url = "https://hn.algolia.com/api/v1/search?query=redux";
 
     this.setState({ isLoading: true });
 
@@ -30,7 +24,7 @@ class Gh1CardGLWrapper extends React.Component {
         if (response.ok) {
           return response.json();
         } else {
-          throw new Error('Something went wrong ...');
+          throw new Error("Something went wrong ...");
         }
       })
       .then(data => this.setState({ data, isLoading: false }))
@@ -38,9 +32,28 @@ class Gh1CardGLWrapper extends React.Component {
   }
 
   render() {
+    const hits = this.state.data.hits || [];
+
+    if (this.state.error) {
+      return <p>{this.state.error.message}</p>;
+    }
+
+    if (this.state.isLoading) {
+      return <p>Loading ...</p>;
+    }
+
     return (
+      /*
       <div>
         <Gh1CardGL tileData={this.state.data} />
+      </div>
+*/
+      <div>
+        {hits.map(hit => (
+          <div key={hit.objectID}>
+            <a href={hit.url}>{hit.title}</a>
+          </div>
+        ))}
       </div>
     );
   }
