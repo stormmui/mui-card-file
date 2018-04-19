@@ -94,10 +94,10 @@ function findActivePage(currentPages, url) {
   return activePage;
 }
 
-const ShowChapterSection = ({ match }) => (
+const ShowRepoView = ({ match }) => (
   <div>
-    <h3>Chapter: {match.params.ch}</h3>
-    <h4>Section: {match.params.sec}</h4>
+    <h3>Repo: {match.params.repo}</h3>
+    <h4>View: {match.params.view}</h4>
     <div>
       <Demo />
     </div>
@@ -169,8 +169,8 @@ class Index extends React.Component {
 
         <div style={{ flex: 1, padding: '10px' }}>
             <Route
-              path="/:ch/:sec"
-              component={ShowChapterSection}
+              path="/:repo/:view"
+              component={ShowRepoView}
             />
         </div>
 
