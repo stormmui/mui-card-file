@@ -1,3 +1,8 @@
+##### For more details
+
+[react-data-fetching](https://github.com/stormasm/react-data-fetching)
+
+##### Supplemental Concepts
 
 Start out with
 [florida-mui](https://github.com/stormasm/florida-mui)
