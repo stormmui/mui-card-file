@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 //import Gh1CardGL from "./Gh1CardGL";
 
-class Gh1CardGLWrapper extends React.Component {
+class Gh2CardGLWrapper extends React.Component {
   constructor(props) {
     super(props);
 
@@ -59,8 +59,8 @@ class Gh1CardGLWrapper extends React.Component {
   }
 }
 
-Gh1CardGLWrapper.propTypes = {
+Gh2CardGLWrapper.propTypes = {
   tileData: PropTypes.object.isRequired
 };
 
-export default Gh1CardGLWrapper;
+export default Gh2CardGLWrapper;

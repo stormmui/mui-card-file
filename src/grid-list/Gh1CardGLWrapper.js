@@ -14,10 +14,12 @@ class Gh1CardGLWrapper extends React.Component {
   }
 
   componentDidMount() {
-    //const url = 'https://raw.githubusercontent.com/stormasm/mui-card-file/master/src/data/repos/ivy.json';
-    //const url = 'https://raw.githubusercontent.com/stormasm/mui-card-file/master/src/data/repos/html5-node-diagram.json';
-    const url =
-      "https://raw.githubusercontent.com/stormasm/mui-card-file/master/src/data/repos/nodejs-sandboxed-fs.json";
+    const template =
+      "https://raw.githubusercontent.com/stormasm/mui-card-file/master/src/data/repos/";
+
+    const url = template + "ivy.json";
+    //const url = template + 'html5-node-diagram.json';
+    //const url = template + 'nodejs-sandboxed-fs.json';
     // const url = "https://hn.algolia.com/api/v1/search?query=redux";
 
     this.setState({ isLoading: true });
@@ -35,7 +37,7 @@ class Gh1CardGLWrapper extends React.Component {
   }
 
   render() {
-    const hits = this.state.data || [];
+    const hits = this.state.data.hits || [];
 
     if (this.state.error) {
       return <p>{this.state.error.message}</p>;
