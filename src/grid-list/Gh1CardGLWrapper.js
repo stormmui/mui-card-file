@@ -58,6 +58,16 @@ class Gh1CardGLWrapper extends React.Component {
         <div>{new String(Array.isArray(hits))}</div>
         <div>{new String(JSON.stringify(hits[0]))}</div>
         <div>{new String(JSON.stringify(hits[9]))}</div>
+
+          <div>
+            {hits.map(hit =>
+              <div key={hit.login}>
+                <a href={hit.avatar}>{hit.avatar}</a>
+              </div>
+            )}
+          </div>
+
+
       </div>
     );
   }
