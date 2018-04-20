@@ -22,6 +22,26 @@ class Gh4CardGLWrapper extends React.Component {
     };
   }
 
+  componentWillReceiveProps(nextProps) {
+    const locationChanged = nextProps.location !== this.props.location;
+    console.log("componentWillReceiveProps");
+    console.log("locationChanged: ", locationChanged);
+    console.log(nextProps.location);
+    console.log(nextProps.match.params.repo);
+    console.log(nextProps.match.params.view);
+    console.log(repoMap[nextProps.match.params.repo]);
+  }
+
+  componentWillUpdate(nextProps) {
+    const locationChanged = nextProps.location !== this.props.location;
+    console.log("componentWillUpdate");
+    console.log("locationChanged: ", locationChanged);
+    console.log(nextProps.location);
+    console.log(nextProps.match.params.repo);
+    console.log(nextProps.match.params.view);
+    console.log(repoMap[nextProps.match.params.repo]);
+  }
+
   componentDidMount() {
     const template =
       "https://raw.githubusercontent.com/stormasm/mui-card-file/master/src/data/repos/";
