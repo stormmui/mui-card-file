@@ -169,10 +169,10 @@ class Index extends React.Component {
         />
 
         <Typography type="display1" gutterBottom>
-          Florida
+          Choose a Github Repository
         </Typography>
         <Typography type="subheading" gutterBottom>
-          has 20 million people...
+          and your favorite data view to explore further...
         </Typography>
 
         <div style={{ flex: 1, padding: "10px" }}>
