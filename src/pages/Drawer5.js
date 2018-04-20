@@ -94,24 +94,6 @@ function findActivePage(currentPages, url) {
   return activePage;
 }
 
-/*
-const repoMap = {
-  repo1: "html5-node-diagram.json",
-  repo2: "ivy.json",
-  repo3: "nodejs-sandboxed-fs.json"
-};
-
-const ShowRepoView = ({ match }) => (
-  <div>
-    <h3>Repo: {match.params.repo}</h3>
-    <h4>View: {match.params.view}</h4>
-    <div>
-      <Demo repoName={repoMap[match.params.repo]} />
-    </div>
-  </div>
-);
-*/
-
 class Index extends React.Component {
   state = {
     mobileOpen: false
