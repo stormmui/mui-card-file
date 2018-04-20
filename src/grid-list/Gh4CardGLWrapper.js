@@ -7,6 +7,9 @@ const repoMap = {
   repo3: "nodejs-sandboxed-fs.json"
 };
 
+const template =
+  "https://raw.githubusercontent.com/stormasm/mui-card-file/master/src/data/repos/";
+
 class Gh4CardGLWrapper extends React.Component {
   constructor(props) {
     super(props);
@@ -40,11 +43,32 @@ class Gh4CardGLWrapper extends React.Component {
     console.log(nextProps.match.params.repo);
     console.log(nextProps.match.params.view);
     console.log(repoMap[nextProps.match.params.repo]);
+
+    const url = template + repoMap[nextProps.match.params.repo];
+/*
+    this.setState({ isLoading: true });
+    this.setState({ repoName: repoMap[this.props.match.params.repo] });
+    this.setState({ repoView: this.props.match.params.view });
+*/
+    fetch(url)
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error(
+            "Sorry, but something went wrong in the CardWrapper..."
+          );
+        }
+      })
+      .then(data => this.setState({ data, isLoading: false }))
+      .catch(error => this.setState({ error, isLoading: false }));
   }
 
   componentDidMount() {
+/*
     const template =
       "https://raw.githubusercontent.com/stormasm/mui-card-file/master/src/data/repos/";
+*/
     const url = template + this.state.repoName;
 
     this.setState({ isLoading: true });
