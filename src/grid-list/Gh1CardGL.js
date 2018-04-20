@@ -28,30 +28,28 @@ function Gh1CardGL(props) {
   const { classes, tileData, repoName, viewName } = props;
 
   return (
-
-  <div>
     <div>
-      <h3>Repo: {repoName}</h3>
-      <h4>View: {viewName}</h4>
-    </div>
+      <div>
+        <h3>Repo: {repoName}</h3>
+        <h4>View: {viewName}</h4>
+      </div>
 
-
-    <div className={classes.root}>
-      <GridList cellHeight={250} className={classes.gridList} cols={3}>
-        {tileData.map(tile => (
-          <GridListTile key={tile.avatar} cols={tile.cols || 1}>
-            <Gh1Card tile={tile} />
-          </GridListTile>
-        ))}
-      </GridList>
+      <div className={classes.root}>
+        <GridList cellHeight={250} className={classes.gridList} cols={3}>
+          {tileData.map(tile => (
+            <GridListTile key={tile.avatar} cols={tile.cols || 1}>
+              <Gh1Card tile={tile} />
+            </GridListTile>
+          ))}
+        </GridList>
+      </div>
     </div>
-  </div>
   );
 }
 
 Gh1CardGL.propTypes = {
   classes: PropTypes.object.isRequired,
-  tileData: PropTypes.object.isRequired,
+  tileData: PropTypes.array.isRequired,
   repoName: PropTypes.string.isRequired,
   viewName: PropTypes.string.isRequired
 };
