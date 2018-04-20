@@ -1,5 +1,4 @@
 import React from "react";
-//import PropTypes from "prop-types";
 import Gh1CardGL from "./Gh1CardGL";
 
 const repoMap = {
@@ -14,8 +13,6 @@ class Gh4CardGLWrapper extends React.Component {
 
     const { match } = props;
 
-    console.log("repoName = ", repoMap[match.params.repo]);
-
     this.state = {
       data: {},
       isLoading: false,
@@ -28,21 +25,20 @@ class Gh4CardGLWrapper extends React.Component {
   componentDidMount() {
     const template =
       "https://raw.githubusercontent.com/stormasm/mui-card-file/master/src/data/repos/";
-
-    //const url = template + "ivy.json";
-    //const url = template + 'html5-node-diagram.json';
-
-    //const url = template + 'nodejs-sandboxed-fs.json';
     const url = template + this.state.repoName;
 
     this.setState({ isLoading: true });
+    this.setState({ repoName: repoMap[this.props.match.params.repo] });
+    this.setState({ repoView: this.props.match.params.view });
 
     fetch(url)
       .then(response => {
         if (response.ok) {
           return response.json();
         } else {
-          throw new Error("Something went wrong ...");
+          throw new Error(
+            "Sorry, but something went wrong in the CardWrapper..."
+          );
         }
       })
       .then(data => this.setState({ data, isLoading: false }))
@@ -73,11 +69,5 @@ class Gh4CardGLWrapper extends React.Component {
     );
   }
 }
-
-/*
-Gh4CardGLWrapper.propTypes = {
-  repoName: PropTypes.string.isRequired
-};
-*/
 
 export default Gh4CardGLWrapper;
