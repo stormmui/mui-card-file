@@ -25,9 +25,17 @@ const styles = theme => ({
 });
 
 function Gh1CardGL(props) {
-  const { classes, tileData } = props;
+  const { classes, tileData, repoName, viewName } = props;
 
   return (
+
+  <div>
+    <div>
+      <h3>Repo: {repoName}</h3>
+      <h4>View: {viewName}</h4>
+    </div>
+
+
     <div className={classes.root}>
       <GridList cellHeight={250} className={classes.gridList} cols={3}>
         {tileData.map(tile => (
@@ -37,12 +45,15 @@ function Gh1CardGL(props) {
         ))}
       </GridList>
     </div>
+  </div>
   );
 }
 
 Gh1CardGL.propTypes = {
   classes: PropTypes.object.isRequired,
-  tileData: PropTypes.object.isRequired
+  tileData: PropTypes.object.isRequired,
+  repoName: PropTypes.string.isRequired,
+  viewName: PropTypes.string.isRequired
 };
 
 export default withStyles(styles)(Gh1CardGL);

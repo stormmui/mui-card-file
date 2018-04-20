@@ -21,7 +21,7 @@ class Gh4CardGLWrapper extends React.Component {
       isLoading: false,
       error: null,
       repoName: repoMap[match.params.repo],
-      repoView: match.params.view
+      viewName: match.params.view
     };
   }
 
@@ -48,7 +48,7 @@ class Gh4CardGLWrapper extends React.Component {
 /*
     this.setState({ isLoading: true });
     this.setState({ repoName: repoMap[this.props.match.params.repo] });
-    this.setState({ repoView: this.props.match.params.view });
+    this.setState({ viewName: this.props.match.params.view });
 */
     fetch(url)
       .then(response => {
@@ -73,7 +73,7 @@ class Gh4CardGLWrapper extends React.Component {
 
     this.setState({ isLoading: true });
     this.setState({ repoName: repoMap[this.props.match.params.repo] });
-    this.setState({ repoView: this.props.match.params.view });
+    this.setState({ viewName: this.props.match.params.view });
 
     fetch(url)
       .then(response => {
@@ -102,13 +102,10 @@ class Gh4CardGLWrapper extends React.Component {
 
     return (
       <div>
-        <div>
-          <h3>Repo: {this.state.repoName}</h3>
-          <h4>View: {this.state.repoView}</h4>
-        </div>
-        <div>
-          <Gh1CardGL tileData={hits} />
-        </div>
+        <Gh1CardGL tileData={hits}
+          repoName={this.state.repoName}
+          viewName={this.state.viewName}
+          />
       </div>
     );
   }
