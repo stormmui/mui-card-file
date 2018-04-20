@@ -110,8 +110,12 @@ class Index extends React.Component {
     };
   }
 
-  handleDrawerToggle = () => {
-    this.setState({ mobileOpen: !this.state.mobileOpen });
+  handleDrawerOpen = () => {
+    this.setState({ mobileOpen: true });
+  };
+
+  handleDrawerClose = () => {
+    this.setState({ mobileOpen: false });
   };
 
   render() {
@@ -127,7 +131,7 @@ class Index extends React.Component {
             <IconButton
               color="inherit"
               aria-label="open drawer"
-              onClick={this.handleDrawerToggle}
+              onClick={this.handleDrawerOpen}
               className={navIconClassName}
             >
               <MenuIcon />
@@ -147,9 +151,10 @@ class Index extends React.Component {
 
         <AppDrawer
           className={classes.drawer}
-          onClose={this.handleDrawerToggle}
-          mobileOpen={this.state.mobileOpen}
           disablePermanent={false}
+          onClose={this.handleDrawerClose}
+          onOpen={this.handleDrawerOpen}
+          mobileOpen={this.state.mobileOpen}
         />
 
         <Typography type="display1" gutterBottom>
