@@ -26,6 +26,9 @@ class Gh4CardGLWrapper extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    /*
+    Do NOT Delete for awhile --- helpful for debugging...
+
     const locationChanged = nextProps.location !== this.props.location;
     console.log("componentWillUpdate");
     console.log("locationChanged: ", locationChanged);
@@ -33,7 +36,7 @@ class Gh4CardGLWrapper extends React.Component {
     console.log(nextProps.match.params.repo);
     console.log(nextProps.match.params.view);
     console.log(repoMap[nextProps.match.params.repo]);
-
+*/
     const url = template + repoMap[nextProps.match.params.repo];
 
     this.setState({ isLoading: true });
@@ -55,15 +58,11 @@ class Gh4CardGLWrapper extends React.Component {
   }
 
   componentDidMount() {
-/*
-    const template =
-      "https://raw.githubusercontent.com/stormasm/mui-card-file/master/src/data/repos/";
-*/
-    const url = template + this.state.repoName;
-
     this.setState({ isLoading: true });
     this.setState({ repoName: repoMap[this.props.match.params.repo] });
     this.setState({ viewName: this.props.match.params.view });
+
+    const url = template + this.state.repoName;
 
     fetch(url)
       .then(response => {
@@ -92,10 +91,11 @@ class Gh4CardGLWrapper extends React.Component {
 
     return (
       <div>
-        <Gh1CardGL tileData={hits}
+        <Gh1CardGL
+          tileData={hits}
           repoName={this.state.repoName}
           viewName={this.state.viewName}
-          />
+        />
       </div>
     );
   }

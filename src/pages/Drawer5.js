@@ -134,7 +134,7 @@ class Index extends React.Component {
 
   render() {
     const { classes } = this.props;
-    const title = "Hola from Florida";
+    const title = "Github Repository Data Viewer";
     let appBarClassName = classes.appBar;
     let navIconClassName = "";
 
