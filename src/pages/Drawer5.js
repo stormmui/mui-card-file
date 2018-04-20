@@ -14,7 +14,7 @@ import withRoot from "../withRoot";
 import { Route } from "react-router-dom";
 import AppDrawer from "./../modules/components/AppDrawer";
 
-import Demo from "./../grid-list/Gh4CardGLWrapper";
+import CardWrapper from "./../grid-list/Gh4CardGLWrapper";
 
 const styles = theme => ({
   root: {
@@ -94,6 +94,7 @@ function findActivePage(currentPages, url) {
   return activePage;
 }
 
+/*
 const repoMap = {
   repo1: "html5-node-diagram.json",
   repo2: "ivy.json",
@@ -109,6 +110,7 @@ const ShowRepoView = ({ match }) => (
     </div>
   </div>
 );
+*/
 
 class Index extends React.Component {
   state = {
@@ -176,7 +178,7 @@ class Index extends React.Component {
         </Typography>
 
         <div style={{ flex: 1, padding: "10px" }}>
-          <Route path="/:repo/:view" component={ShowRepoView} />
+          <Route path="/:repo/:view" component={CardWrapper} />
         </div>
       </div>
     );

@@ -1,19 +1,27 @@
 import React from "react";
-import PropTypes from "prop-types";
+//import PropTypes from "prop-types";
 import Gh1CardGL from "./Gh1CardGL";
+
+const repoMap = {
+  repo1: "html5-node-diagram.json",
+  repo2: "ivy.json",
+  repo3: "nodejs-sandboxed-fs.json"
+};
 
 class Gh4CardGLWrapper extends React.Component {
   constructor(props) {
     super(props);
 
-    const { repoName } = this.props;
+    const { match } = props;
 
-    console.log("repoName = ", repoName);
+    console.log("repoName = ", repoMap[match.params.repo]);
 
     this.state = {
       data: {},
       isLoading: false,
-      error: null
+      error: null,
+      repoName: repoMap[match.params.repo],
+      repoView: match.params.view
     };
   }
 
@@ -25,7 +33,7 @@ class Gh4CardGLWrapper extends React.Component {
     //const url = template + 'html5-node-diagram.json';
 
     //const url = template + 'nodejs-sandboxed-fs.json';
-    const url = template + this.props.repoName;
+    const url = template + this.state.repoName;
 
     this.setState({ isLoading: true });
 
@@ -54,14 +62,22 @@ class Gh4CardGLWrapper extends React.Component {
 
     return (
       <div>
-        <Gh1CardGL tileData={hits} />
+        <div>
+          <h3>Repo: {this.state.repoName}</h3>
+          <h4>View: {this.state.repoView}</h4>
+        </div>
+        <div>
+          <Gh1CardGL tileData={hits} />
+        </div>
       </div>
     );
   }
 }
 
+/*
 Gh4CardGLWrapper.propTypes = {
   repoName: PropTypes.string.isRequired
 };
+*/
 
 export default Gh4CardGLWrapper;
