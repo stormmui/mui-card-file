@@ -24,7 +24,7 @@ class Gh4CardGLWrapper extends React.Component {
       viewName: match.params.view
     };
   }
-
+/*
   componentWillReceiveProps(nextProps) {
     const locationChanged = nextProps.location !== this.props.location;
     console.log("componentWillReceiveProps");
@@ -34,8 +34,8 @@ class Gh4CardGLWrapper extends React.Component {
     console.log(nextProps.match.params.view);
     console.log(repoMap[nextProps.match.params.repo]);
   }
-
-  componentWillUpdate(nextProps) {
+*/
+  componentWillReceiveProps(nextProps) {
     const locationChanged = nextProps.location !== this.props.location;
     console.log("componentWillUpdate");
     console.log("locationChanged: ", locationChanged);
