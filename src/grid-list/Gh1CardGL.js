@@ -5,6 +5,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "material-ui/styles";
 import GridList, { GridListTile } from "material-ui/GridList";
+import Gh1CardNoImage from "./../cards/Gh1CardNoImage";
 import Gh1Card from "./../cards/Gh1Card";
 
 const styles = theme => ({
@@ -27,6 +28,27 @@ const styles = theme => ({
 function Gh1CardGL(props) {
   const { classes, tileData, repoName, viewName } = props;
 
+  if (viewName === "view1") {
+    return (
+      <div>
+        <div>
+          <h3>Repo: {repoName}</h3>
+          <h4>View: {viewName}</h4>
+        </div>
+
+        <div className={classes.root}>
+          <GridList cellHeight={250} className={classes.gridList} cols={3}>
+            {tileData.map(tile => (
+              <GridListTile key={tile.avatar} cols={tile.cols || 1}>
+                <Gh1Card tile={tile} />
+              </GridListTile>
+            ))}
+          </GridList>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div>
       <div>
@@ -38,7 +60,7 @@ function Gh1CardGL(props) {
         <GridList cellHeight={250} className={classes.gridList} cols={3}>
           {tileData.map(tile => (
             <GridListTile key={tile.avatar} cols={tile.cols || 1}>
-              <Gh1Card tile={tile} />
+              <Gh1CardNoImage tile={tile} />
             </GridListTile>
           ))}
         </GridList>
