@@ -1,5 +1,5 @@
 import React from "react";
-import Gh1CardGL from "./Gh1CardGL";
+import GhCardGL from "./Gh2CardGL";
 
 const repoMap = {
   repo1: "html5-node-diagram.json",
@@ -10,7 +10,7 @@ const repoMap = {
 const template =
   "https://raw.githubusercontent.com/stormasm/mui-card-file/master/src/data/repos/";
 
-class Gh4CardGLWrapper extends React.Component {
+class GhCardGLWrapper extends React.Component {
   constructor(props) {
     super(props);
 
@@ -91,7 +91,7 @@ class Gh4CardGLWrapper extends React.Component {
 
     return (
       <div>
-        <Gh1CardGL
+        <GhCardGL
           tileData={hits}
           repoName={this.state.repoName}
           viewName={this.state.viewName}
@@ -101,4 +101,4 @@ class Gh4CardGLWrapper extends React.Component {
   }
 }
 
-export default Gh4CardGLWrapper;
+export default GhCardGLWrapper;
