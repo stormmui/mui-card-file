@@ -1,6 +1,9 @@
 // This was the ImageGridList prior to swapping out
 // an img for a SimpleCard...
 
+// Now we have two types of Gridlists instead of one.
+// The 2nd type is the SingleLineGridList
+
 import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "material-ui/styles";
@@ -20,6 +23,11 @@ const styles = theme => ({
     width: 600,
     height: 720
   },
+  gridListSingleLine: {
+    flexWrap: "nowrap",
+    // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
+    transform: "translateZ(0)"
+  },
   subheader: {
     width: "100%"
   }
@@ -38,6 +46,27 @@ function GhCardGL(props) {
 
         <div className={classes.root}>
           <GridList cellHeight={250} className={classes.gridList} cols={3}>
+            {tileData.map(tile => (
+              <GridListTile key={tile.avatar} cols={tile.cols || 1}>
+                <GhCard tile={tile} />
+              </GridListTile>
+            ))}
+          </GridList>
+        </div>
+      </div>
+    );
+  }
+
+  if (viewName === "view2") {
+    return (
+      <div>
+        <div>
+          <h3>Repo: {repoName}</h3>
+          <h4>View: {viewName}</h4>
+        </div>
+
+        <div className={classes.root}>
+          <GridList className={classes.gridListSingleLine} cols={2.5}>
             {tileData.map(tile => (
               <GridListTile key={tile.avatar} cols={tile.cols || 1}>
                 <GhCard tile={tile} />
