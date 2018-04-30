@@ -5,8 +5,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "material-ui/styles";
 import GridList, { GridListTile } from "material-ui/GridList";
-import Gh1CardNoImage from "./../cards/Gh1CardNoImage";
-import Gh1Card from "./../cards/Gh1Card";
+import GhCardNoImage from "./../cards/Gh1CardNoImage";
+import GhCard from "./../cards/Gh1Card";
 
 const styles = theme => ({
   root: {
@@ -25,7 +25,7 @@ const styles = theme => ({
   }
 });
 
-function Gh1CardGL(props) {
+function GhCardGL(props) {
   const { classes, tileData, repoName, viewName } = props;
 
   if (viewName === "view1") {
@@ -40,7 +40,7 @@ function Gh1CardGL(props) {
           <GridList cellHeight={250} className={classes.gridList} cols={3}>
             {tileData.map(tile => (
               <GridListTile key={tile.avatar} cols={tile.cols || 1}>
-                <Gh1Card tile={tile} />
+                <GhCard tile={tile} />
               </GridListTile>
             ))}
           </GridList>
@@ -60,7 +60,7 @@ function Gh1CardGL(props) {
         <GridList cellHeight={250} className={classes.gridList} cols={3}>
           {tileData.map(tile => (
             <GridListTile key={tile.avatar} cols={tile.cols || 1}>
-              <Gh1CardNoImage tile={tile} />
+              <GhCardNoImage tile={tile} />
             </GridListTile>
           ))}
         </GridList>
@@ -69,11 +69,11 @@ function Gh1CardGL(props) {
   );
 }
 
-Gh1CardGL.propTypes = {
+GhCardGL.propTypes = {
   classes: PropTypes.object.isRequired,
   tileData: PropTypes.array.isRequired,
   repoName: PropTypes.string.isRequired,
   viewName: PropTypes.string.isRequired
 };
 
-export default withStyles(styles)(Gh1CardGL);
+export default withStyles(styles)(GhCardGL);
