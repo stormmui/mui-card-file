@@ -14,6 +14,9 @@ const styles = {
   },
   cardContent: {
     height: 150
+  },
+  location: {
+    height: 30
   }
 };
 
@@ -32,7 +35,7 @@ function GhCard(props) {
             <a href={"https://github.com/" + tile.login}>{tile.login}</a>
           </Typography>
           <Typography component="p">{tile.name}</Typography>
-          <Typography component="p">
+          <Typography className={classes.location} component="p">
             <b>{tile.location}</b>
           </Typography>
         </CardContent>
