@@ -9,7 +9,7 @@ import PropTypes from "prop-types";
 import { withStyles } from "material-ui/styles";
 import GridList, { GridListTile } from "material-ui/GridList";
 import GhCardNoImage from "./../cards/Gh1CardNoImage";
-import GhCard from "./../cards/Gh1Card";
+import GhCard from "./../cards/Gh2Card";
 
 const styles = theme => ({
   root: {
@@ -66,7 +66,7 @@ function GhCardGL(props) {
         </div>
 
         <div className={classes.root}>
-          <GridList className={classes.gridListSingleLine} cols={6}>
+          <GridList className={classes.gridListSingleLine} cols={3}>
             {tileData.map(tile => (
               <GridListTile key={tile.avatar} cols={tile.cols || 1}>
                 <GhCard tile={tile} />
