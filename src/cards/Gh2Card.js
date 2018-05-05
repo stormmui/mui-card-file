@@ -35,7 +35,7 @@ function GhCard(props) {
             <a href={"https://github.com/" + tile.login}>{tile.login}</a>
           </Typography>
           <Typography component="p">{tile.name}</Typography>
-          <Typography className={classes.location} variant="title" gutterBottom>
+          <Typography component="p" className={classes.location} gutterBottom>
             <b>{tile.location}</b>
           </Typography>
         </CardContent>
