@@ -1,5 +1,5 @@
 import React from "react";
-import GhCardGL from "./Gh2CardGL";
+import GhCardGL from "./Gh3CardGL";
 
 const repoMap = {
   repo1: "html5-node-diagram.json",
