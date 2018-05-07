@@ -18,12 +18,11 @@ const styles = theme => ({
     flexWrap: "wrap",
     justifyContent: "space-around",
     overflow: "hidden",
-    height: 218,
+    height: 250,
     backgroundColor: theme.palette.background.paper
   },
   gridList: {
     width: 600,
-    height: 720,
     backgroundColor: lightGreen[100]
   },
   gridListSingleLine: {
