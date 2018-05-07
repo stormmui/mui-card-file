@@ -69,7 +69,7 @@ function GhCardGL(props) {
         </div>
 
         <div className={classes.root}>
-          <GridList cellHeight={250} className={classes.gridListSingleLine} cols={7}>
+          <GridList cellHeight={250} className={classes.gridListSingleLine} cols={6}>
             {tileData.map(tile => (
               <GridListTile key={tile.avatar} cols={tile.cols || 1}>
                 <GhCard tile={tile} />
