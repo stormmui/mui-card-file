@@ -1,3 +1,8 @@
+
+June 6, 2018
+This is the final version of code with the drawer and 3 views...
+This code will be migrated over to a new repo with other functionality.
+
 #### For more details
 
 [react-data-fetching](https://github.com/stormasm/react-data-fetching)
